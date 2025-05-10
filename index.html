@@ -1,30 +1,243 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Resume</title>
-        <link rel="stylesheet" href="../css/main.css">
-    </head>
-    <body>
-        <main>
-            <h1>Ширин Валентин</h1>
-            <h2>Frontend Программист</h2>
-        
-            <hr>
-        
-            <section>
-                <h2>Ключевые навыки:</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме Иванов Иван</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #444;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ff88;
+        }
+
+        section {
+            padding: 2rem 0;
+            background: #fff;
+            margin: 1rem 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .experience-item {
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background: #00ff88;
+            color: #333;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #00cc6a;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Иванов Иван</h1>
+        <p>Веб-разработчик</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">О себе</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#experience">Опыт</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">О себе</h2>
+            <p>Фронтенд-разработчик с 3-летним опытом создания современных веб-приложений. Специализируюсь на JavaScript, React и Vue.js.</p>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Навыки</h2>
+            <div class="skills">
+                <div class="skill-item">
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, React, Vue.js</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Backend</h3>
+                    <p>Node.js, Express, MongoDB</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Инструменты</h3>
+                    <p>Git, Webpack, Docker, Figma</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Опыт работы</h2>
+            <div class="experience-item">
+                <h3>Ведущий разработчик - Компания "ТехноСтарт"</h3>
+                <p>2020-настоящее время</p>
                 <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
+                    <li>Разработка SPA-приложений на React</li>
+                    <li>Оптимизация производительности веб-приложений</li>
+                    <li>Руководство командой из 5 разработчиков</li>
                 </ul>
-            </section>
-        
-            <section>
-                <h2>О себе</h2>
-                <p>Хочу научиться программировать</p>
-            </section>
-        </main>
-    </body>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Сообщение" rows="5" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Иванов Иван. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Обработка формы
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Сообщение отправлено!');
+            this.reset();
+        });
+
+        // Анимация при скролле
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Инициализация анимации
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.6s ease-out';
+        });
+    </script>
+</body>
 </html>
