@@ -1,243 +1,212 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме Иванов Иван</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        nav {
-            background: #444;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #00ff88;
-        }
-
-        section {
-            padding: 2rem 0;
-            background: #fff;
-            margin: 1rem 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-item {
-            background: #f4f4f4;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-
-        .experience-item {
-            margin-bottom: 2rem;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-        }
-
-        button {
-            background: #00ff88;
-            color: #333;
-            border: none;
-            padding: 0.7rem 1.5rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #00cc6a;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul li {
-                margin: 5px 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Резюме | Валентин Ширин</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom DevOps style */
+    body {
+      background-color: #1e1e1e;
+      color: #c5c8c6;
+      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar {
+      background-color: #242424;
+    }
+    .navbar-brand,
+    .nav-link {
+      color: #8abeb7 !important;
+      font-family: monospace;
+    }
+    .nav-link:hover {
+      color: #96c0b7 !important;
+    }
+    section {
+      padding: 60px 0;
+    }
+    .section-title {
+      font-family: monospace;
+      font-size: 1.75rem;
+      color: #81a2be;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .section-title::before {
+      content: ">";
+      margin-right: 0.5rem;
+      color: #8abeb7;
+    }
+    .card {
+      background-color: #2d2d2d;
+      border: none;
+      border-left: 4px solid #8abeb7;
+    }
+    .card-body {
+      color: #c5c8c6;
+    }
+    .badge-devops {
+      background-color: #b294bb;
+      color: #1e1e1e;
+      margin: 2px;
+      font-family: monospace;
+    }
+    footer {
+      background-color: #242424;
+      color: #8abeb7;
+      padding: 20px 0;
+    }
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #8abeb7;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #1e1e1e;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Иванов Иван</h1>
-        <p>Веб-разработчик</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">О себе</a></li>
-            <li><a href="#skills">Навыки</a></li>
-            <li><a href="#experience">Опыт</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-    </nav>
-
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <section id="about">
-            <h2 class="section-title">О себе</h2>
-            <p>Фронтенд-разработчик с 3-летним опытом создания современных веб-приложений. Специализируюсь на JavaScript, React и Vue.js.</p>
-        </section>
-
-        <section id="skills">
-            <h2 class="section-title">Навыки</h2>
-            <div class="skills">
-                <div class="skill-item">
-                    <h3>Frontend</h3>
-                    <p>HTML5, CSS3, JavaScript, React, Vue.js</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Backend</h3>
-                    <p>Node.js, Express, MongoDB</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Инструменты</h3>
-                    <p>Git, Webpack, Docker, Figma</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2 class="section-title">Опыт работы</h2>
-            <div class="experience-item">
-                <h3>Ведущий разработчик - Компания "ТехноСтарт"</h3>
-                <p>2020-настоящее время</p>
-                <ul>
-                    <li>Разработка SPA-приложений на React</li>
-                    <li>Оптимизация производительности веб-приложений</li>
-                    <li>Руководство командой из 5 разработчиков</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2 class="section-title">Контакты</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <input type="text" placeholder="Имя" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Сообщение" rows="5" required></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </section>
+      <a class="navbar-brand" href="#about">Valentin Shirin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">Обо мне</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Опыт</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Навыки</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <footer>
-        <p>© 2024 Иванов Иван. Все права защищены.</p>
-    </footer>
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Обо мне</h2>
+      <div class="card p-3">
+        <div class="card-body">
+          <p>Начинающий DevOps-инженер, переориентировался из веб-разработки и системного администрирования. Обладаю практическим опытом контейнеризации приложений в Docker и настройкой CI/CD-конвейеров через GitHub Actions в учебных и личных проектах.</p>
+          <p>Уверенно работаю в Linux (Astra, Ubuntu): настраивал серверы, автоматизировал задачи на Bash и Python. Активно изучаю Kubernetes и инфраструктуру как код, стремлюсь оптимизировать процессы доставки ПО и повышать надёжность и масштабируемость систем.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Плавная прокрутка
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Опыт</h2>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Стажёр Web-разработчик @ НастАртВеб (нояб. 2017 – апр. 2018)</h5>
+          <ul>
+            <li>Доработка сайтов на CMS WordPress (HTML, CSS, PHP).</li>
+            <li>Настройка плагинов и резервное копирование баз данных.</li>
+            <li>Работа с Git: контроль версий и командная разработка.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Обработка формы
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Сообщение отправлено!');
-            this.reset();
-        });
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Проекты</h2>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">CI/CD-пайплайн</h5>
+          <p>Настроил GitHub Actions для сборки и тестирования Python-приложения в учебном проекте при каждом pull request.</p>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Docker-образ</h5>
+          <p>Создал Dockerfile и опубликовал образ веб-приложения на Docker Hub для изолированного запуска.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Анимация при скролле
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < window.innerHeight - 100) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        });
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Навыки</h2>
+      <div>
+        <span class="badge badge-devops">Linux</span>
+        <span class="badge badge-devops">Docker</span>
+        <span class="badge badge-devops">CI/CD</span>
+        <span class="badge badge-devops">Bash</span>
+        <span class="badge badge-devops">Python</span>
+        <span class="badge badge-devops">Kubernetes</span>
+        <span class="badge badge-devops">Git</span>
+        <span class="badge badge-devops">HTML/CSS</span>
+        <span class="badge badge-devops">JavaScript</span>
+      </div>
+    </div>
+  </section>
 
-        // Инициализация анимации
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'all 0.6s ease-out';
-        });
-    </script>
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Контакты</h2>
+      <ul class="list-unstyled">
+        <li><strong>Телефон:</strong> +7 (981) 156-0750</li>
+        <li><strong>Email:</strong> <a href="mailto:valentinshirinn@gmail.com" class="text-decoration-none">valentinshirinn@gmail.com</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/shirinv" class="text-decoration-none">github.com/shirinv</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/valentin-shirin-2422811b3/" class="text-decoration-none">linkedin.com/in/valentin-shirin-2422811b3</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 Valentin Shirin. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Theme toggle -->
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    // Dark/Light theme toggle
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      if (document.body.classList.contains('light-theme')) {
+        btn.textContent = '🌞';
+        document.body.style.backgroundColor = '#fff';
+        document.body.style.color = '#333';
+      } else {
+        btn.textContent = '🌙';
+        document.body.style.backgroundColor = '#1e1e1e';
+        document.body.style.color = '#c5c8c6';
+      }
+    });
+  </script>
 </body>
 </html>
